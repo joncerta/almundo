@@ -7,11 +7,13 @@ import { routing, appRoutingProviders } from "./app.routing";
 
 import { AppComponent } from './app.component';
 import { HotelsComponent } from './component/hotels/hotels.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HotelsComponent
+    HotelsComponent,
+    SearchPipe
   ],
   imports: [
     BrowserModule,

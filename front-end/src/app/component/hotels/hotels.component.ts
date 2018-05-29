@@ -10,6 +10,8 @@ import {NgbRatingConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class HotelsComponent implements OnInit {
   public hotels;
+  public dropTable = false;
+  public dropStarsTable = false;
 
   constructor(
     private hotelService: HotelService,
@@ -25,12 +27,19 @@ export class HotelsComponent implements OnInit {
     this.hotelService.getHotels().subscribe(
       result => {
         this.hotels = result;
-        console.log(this.hotels);
       },
       error => {
         console.log(error);
       }
     );;
+  }
+
+  dropSearch() {
+    this.dropTable = !this.dropTable;
+  }
+
+  dropStars() {
+    this.dropStarsTable = !this.dropStarsTable;
   }
 
 }

@@ -4,7 +4,7 @@ header {
     padding: 1% 0.5%;
 }
 
-#busqueda > h4 > span {
+#busqueda > h4 > a > span {
     margin-right: 5px;
 }
 
@@ -74,4 +74,14 @@ header {
 
 input[type=checkbox]{
     margin-right: 5%
+}
+
+@media (max-width: 600px) {
+    #filtros {
+        margin-top: -6%;
+    }
+    #info-card {
+        border-right: 0px;
+        border-bottom: dashed 2px rgb(217, 217, 217);
+    }
 }
