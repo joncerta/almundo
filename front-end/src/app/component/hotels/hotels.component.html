@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <header class="row">
+    <img src="./../assets/images/logo-almundo.svg" alt="">
+  </header>
+  <br/>
+  <div class="row">
+    <div class="col-sm-12 col-md-2 offset-1" id="side-menu">
+      <div class="row">
+        <div class="col-md-12" id="filtros">
+          <h4>Filtros</h4>
+        </div>
+        <div class="col-md-12" id="busqueda">
+          <h4><a class="d-flex"><span class="icon-search"></span> Nombre de hotel <span class="fa fa-sort-up ml-auto p-2"></span></a></h4>
+          <input type="text" name="buscar" class="form-control" placeholder="Ingrese el nombre del hotel">
+        </div>
+        <div class="col-md-12" id="estrellas">
+          <h4 class="d-flex">Estrellas <span class="fa fa-sort-up ml-auto p-2"></span></h4>
+          <p><input type="checkbox" aria-label="Checkbox for following text input">Todas las estrellas</p>
+          <p><input type="checkbox" aria-label="Checkbox for following text input"> <ngb-rating [rate]="5" [ngStyle]="{'color':'rgb(252, 187, 0'}"></ngb-rating></p>
+          <p><input type="checkbox" aria-label="Checkbox for following text input"> <ngb-rating [rate]="4" [ngStyle]="{'color':'rgb(252, 187, 0'}"></ngb-rating></p>
+          <p><input type="checkbox" aria-label="Checkbox for following text input"> <ngb-rating [rate]="3" [ngStyle]="{'color':'rgb(252, 187, 0'}"></ngb-rating></p>
+          <p><input type="checkbox" aria-label="Checkbox for following text input"> <ngb-rating [rate]="2" [ngStyle]="{'color':'rgb(252, 187, 0'}"></ngb-rating></p>
+          <p><input type="checkbox" aria-label="Checkbox for following text input"> <ngb-rating [rate]="1" [ngStyle]="{'color':'rgb(252, 187, 0'}"></ngb-rating></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="row" id="content-card" *ngFor="let hotel of hotels">
+        <div class="col-3 text-center"><img src="./../../assets/images/hotels/{{hotel.image}}" alt=""></div>
+        <div class="col-7" id="info-card">
+          <p>{{hotel.name}}</p>
+          <p><ngb-rating [rate]="hotel.stars" [ngStyle]="{'color':'rgb(252, 187, 0'}"></ngb-rating></p>
+          <span *ngFor="let img of hotel.amenities" class="icon-{{img}}" [ngStyle]="{'font-size':'30px', 'margin-right': '15px'}" ></span>
+        </div>
+        <div class="col-2 text-center" id="precios-card">
+          <p>Precio por noche por habitación</p>
+          <p> ARS <strong>{{hotel.price}}</strong></p>
+          <button class="btn btn-primary" type="button">Ver hotel</button>          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
